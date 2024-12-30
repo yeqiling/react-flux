@@ -1,0 +1,95 @@
+{
+  "name": "reactflux",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prebuild": "node src/scripts/version-info.js",
+    "prepare": "husky",
+    "preview": "pnpm run build && vite preview"
+  },
+  "dependencies": {
+    "@arco-design/color": "^0.4.0",
+    "@arco-design/web-react": "^2.65.0",
+    "@nanostores/persistent": "^0.10.2",
+    "@nanostores/react": "^0.8.2",
+    "canvas-confetti": "^1.9.3",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.13",
+    "framer-motion": "^11.13.1",
+    "highlight.js": "^11.10.0",
+    "hls.js": "^1.5.17",
+    "html-react-parser": "^5.1.18",
+    "littlefoot": "^4.1.2",
+    "lodash-es": "^4.17.21",
+    "nanostores": "^0.11.3",
+    "node-polyglot": "^2.6.0",
+    "ofetch": "^1.4.1",
+    "plyr": "^3.7.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hotkeys-hook": "^4.6.1",
+    "react-intersection-observer": "^9.13.1",
+    "react-photo-view": "^1.2.6",
+    "react-router": "^7.0.1",
+    "react-swipeable": "^7.0.2",
+    "react-syntax-highlighter": "^15.6.1",
+    "sanitize-html": "^2.13.1",
+    "simplebar-react": "^3.2.6",
+    "validator": "^13.12.0",
+    "virtua": "^0.39.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@vitejs/plugin-react": "^4.3.3",
+    "depcheck": "^1.4.7",
+    "eslint": "^9.16.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.4.2",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "vite": "^5.4.11",
+    "vite-plugin-pwa": "^0.20.5",
+    "workbox-window": "^7.3.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,mjs,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,jsonc,css,md}": [
+      "prettier --write"
+    ]
+  }
+}
